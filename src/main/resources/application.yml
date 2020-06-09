@@ -1,0 +1,38 @@
+# 配置默认值注入
+student:
+    name: zs
+    age: 23
+    sex: true
+    birthday: 2019/02/08
+    # 行内样式写法
+    # location: {province: 陕西,city: 西安,zone: 莲湖区}
+    location:
+      province: 陕西
+      city: 西安
+      zone: 莲湖区
+      # 集合数组行内样式写法
+      # hobbys: [足球,篮球]
+    hobbys:
+      - 足球
+      -  篮球
+    skills:
+      - 编程
+      - 金融
+    # 对象类型行内样式写法
+    # pet: {nickName: wc,strain: hsq}
+    pet:
+      nikcName: wc
+      strain: hsq
+
+# 单配置多环境切换
+spring:
+  profiles:
+    active:  dev
+---
+spring:
+  profiles:  dev
+server:
+  port: 90
+---
+spring:
+  profiles:  test
